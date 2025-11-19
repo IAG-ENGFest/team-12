@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cyberpunk Fireworks</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="canvas-wrapper">
-        <canvas id="fireworksCanvas" width="1280" height="720"></canvas>
-      </div>
-      <button id="fireworksBtn">Launch Fireworks</button>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airport Dash</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <div id="start-screen" class="screen">
+            <h1 class="game-title">AIRPORT DASH</h1>
+            <div class="instructions-block">
+                <p class="instructions"><strong>Objective:</strong> Move across the 3 lanes, avoid obstacles, and throw tickets to passengers in the far (4th) lane.</p>
+                <p class="instructions"><strong>Controls:</strong> Left / Right arrows to change lanes, Space to throw tickets.</p>
+                <p class="instructions"><strong>Scoring:</strong> +10 points per successful ticket delivery. Infinite tickets.</p>
+                <p class="instructions"><strong>Lives:</strong> You have 3 lives; hitting obstacles costs one life.</p>
+                <p class="instructions"><strong>Difficulty:</strong> Every 30s spawn rate increases; obstacles appear more often.</p>
+                <p class="instructions"><strong>Tip:</strong> Align vertically with a passenger (small margin of error) before throwing.</p>
+            </div>
+            <p class="start-prompt">Press SPACE to Start</p>
+        </div>
+        <div id="game-over-screen" class="screen hidden">
+            <h1 class="game-title">GAME OVER</h1>
+            <p class="final-score">Final Score: <span id="final-score-value">0</span></p>
+            <p class="start-prompt">Press SPACE to Play Again</p>
+        </div>
     </div>
-    <script src="script.js"></script>
-  </body>
+    <audio id="bg-music" src="Delibes _ Lakme, Flower Duet (redone).mid" loop></audio>
+    <script src="game.js"></script>
+</body>
+
 </html>
